@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  ComponentDidMount() {
+    fetch("/api/getMessages")
+      .then( res => console.log("Got data? ",res)); 
+  }
+
+  render() {
+    console.log("Rendering");
+    return (
+      <div className="App">
+        <h1>Comments</h1>
+        <div id="comments"></div>
+        <form action="/api/createMessage">
+          <input type="text" id="comment"/>
+        </form>
+        <div>Made by Ivan</div>
+      </div>);   
+  }
 }
 
 export default App;
