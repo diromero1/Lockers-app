@@ -17,6 +17,7 @@ class App extends Component {
         <form action="/api/createMessage">
           <input type="text" id="comment"/>
         </form>
+        <h2>Make a change in the world!</h2>
         <div>Made by Ivan</div>
       </div>);   
   }
