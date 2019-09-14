@@ -3,9 +3,9 @@ import "./App.css";
 
 class App extends Component {
 
-  ComponentDidMount() {
+  componentDidMount() {
     fetch("/api/getMessages")
-      .then( res => console.log("Got data? ",res)); 
+      .then( res => console.log("Got data?" ,res)); 
   }
 
   render() {
