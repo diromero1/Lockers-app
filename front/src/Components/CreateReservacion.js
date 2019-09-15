@@ -46,7 +46,8 @@ class UsuarioList extends Component {
         <h1>Lockers disponibles</h1>
 
         <div id = "listaEdificios">
-          <Select id="edificios" options = {this.state.lockers} />
+          <Select id="edificios" options = {
+            this.state.lockers.map(l => {return {value: l.numero, label: l.numero}})}/>
 
         </div>
 
@@ -55,7 +56,6 @@ class UsuarioList extends Component {
           <input type="text" name="text"/>
         </form>
         <h2>Make a change in the world!</h2>
-        <div>Made by Ivan</div>
       </div>);
   }
 }
