@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon src/index.js",
-    "postinstall": "react-scripts build"
+    "dev": "nodemon src/index.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
