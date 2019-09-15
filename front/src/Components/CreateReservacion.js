@@ -46,6 +46,7 @@ class UsuarioList extends Component {
         <h1>Lockers disponibles</h1>
 
         <div id = "listaEdificios">
+          <h4>Selecciona tu locker</h4>
           <Select id="edificios" options = {
             this.state.lockers.map(l => {return {value: l.numero, label: l.numero}})}/>
 
