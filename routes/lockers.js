@@ -5,7 +5,8 @@ var router = express.Router();
 function connect(callback) {
   var MongoClient = require("mongodb").MongoClient;
 
-  var url = "mongodb://localhost:27017"
+  var url = "mongodb+srv://dfnino10:<password>@cluster0-xlopf.mongodb.net/test?retryWrites=true&w=majority"
+
 
   var client = new MongoClient(url);
 
