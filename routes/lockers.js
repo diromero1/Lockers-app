@@ -13,8 +13,9 @@ function connect(callback) {
     if (err!==null) throw err;
 
     var db = client.db("lockers-app");
-    var lockers = db.collection("Locker");
+    var lockers = db.collection("Lockers");
     console.log("Database connected");
+    console.log('Hay ' + lockers.count()+ 'en la coleccion de lockers');
 
     callback(lockers, client);
   });
@@ -40,6 +41,7 @@ function createLocker(c) {
       if(err!==null) throw err;
 
       console.log("Inserted");
+      client.close();
     });
   });
 }

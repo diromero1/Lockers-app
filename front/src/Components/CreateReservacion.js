@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import "../App.css";
+import Select from 'react-select'
 
 import Comment from "../Comment.js";
 
@@ -7,14 +8,10 @@ class UsuarioList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      comments: [
-      ]
+      lockers: []
     };
   }
 
-  componentDidMount() {
-    this.reloadData();
-  }
 
   reloadData() {
     fetch("/usuarios/getUsuarios")
@@ -24,22 +21,34 @@ class UsuarioList extends Component {
         this.setState({
           comments: data
         })
-      });    
+      });
   }
 
-  renderComments() {
+  /*renderComments() {
     return this.state.comments.map(
       (c, i) => { return <Comment key={i++} comment={c}>{c.text}</Comment> }
     );
+  }*/
+
+  componentDidMount(){
+    fetch ('/lockers/getLockers').
+    then(res => res.json()).
+    then(lockers => this.setState({
+      lockers: lockers
+    }));
+    this.reloadData();
   }
 
   render() {
     console.log("Rendering");
     return (
       <div className="App">
-        <h1>Comments</h1>
+        <h1>Lockers disponibles</h1>
 
-        {this.renderComments()}
+        <div id = "listaEdificios">
+          <Select id="edificios" options = {this.state.lockers} />
+
+        </div>
 
         <div id="comments"></div>
         <form action="/api/createMessage" method="POST">
@@ -47,7 +56,7 @@ class UsuarioList extends Component {
         </form>
         <h2>Make a change in the world!</h2>
         <div>Made by Ivan</div>
-      </div>);   
+      </div>);
   }
 }
 
