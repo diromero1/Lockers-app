@@ -28,7 +28,7 @@ Is nesessary to have http-server installed on your machine to deploy this websit
 
 ## Screenshot
 
-![screenshot](https://github.com/diromero1/CoverLetter/blob/master/img/screenshot.PNG?raw=true)
+![screenshot](https://github.com/diromero1/Lockers-app/blob/master/preview.png?raw=true)
 
 ## Authors
 
