@@ -1,20 +1,20 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 
 
 function connect(callback) {
-  var MongoClient = require("mongodb").MongoClient;
+  let MongoClient = require("mongodb").MongoClient;
 
-  var url = "mongodb+srv://dfnino10:<password>@cluster0-xlopf.mongodb.net/test?retryWrites=true&w=majority"
+  let url = "mongodb+srv://dfnino10:<password>@cluster0-xlopf.mongodb.net/test?retryWrites=true&w=majority"
 
 
-  var client = new MongoClient(url);
+  let client = new MongoClient(url);
 
   client.connect(function(err){
     if (err!==null) throw err;
 
-    var db = client.db("lockers-app");
-    var lockers = db.collection("Lockers");
+    let db = client.db("lockers-app");
+    let lockers = db.collection("Lockers");
     console.log("Database connected");
     console.log('Hay ' + lockers.count()+ 'en la coleccion de lockers');
 
