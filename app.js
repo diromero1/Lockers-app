@@ -1,15 +1,15 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var lockersRouter = require('./routes/lockers');
-var reservacionesRouter = require('./routes/reservaciones');
-var usuariosRouter = require('./routes/usuarios');
+let indexRouter = require('./routes/index');
+let lockersRouter = require('./routes/lockers');
+let reservacionesRouter = require('./routes/reservaciones');
+let usuariosRouter = require('./routes/usuarios');
 
-var app = express();
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
